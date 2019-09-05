@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SimpleStorageContract from "./contracts/SimpleStorage.json";
 import getWeb3 from "./utils/getWeb3";
+import ContactList from './components/ContactList'
 
 import "./App.css";
 
@@ -65,6 +66,9 @@ class App extends Component {
           Try changing the value stored on <strong>line 40</strong> of App.js.
         </p>
         <div>The stored value is: {this.state.storageValue}</div>
+
+
+        <ContactList/>
       </div>
     );
   }
