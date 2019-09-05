@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import contacts from '../data/contacts.json'
+import HashAvatar from './HashAvatar'
 
 class ContactItem extends Component {
     render() {
         const {address, name} = this.props;
         return (
             <article>
+                <HashAvatar hash={address}/>
                 <div className="contact">
                     {address}
                     <strong>@{name}</strong>

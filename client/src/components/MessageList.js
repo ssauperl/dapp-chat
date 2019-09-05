@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import messages from '../data/messages.json'
+import HashAvatar from './HashAvatar'
 import "../chatBubbles.sass";
 
 class MessageItem extends Component {
@@ -8,12 +9,13 @@ class MessageItem extends Component {
         return (
             <div className={message.mine ? 'chat-message chat-message-sender' : 'chat-message chat-message-recipient'}>
                 <div class='chat-message-wrapper'>
+                    <HashAvatar classes="chat-image chat-image-default" hash={message.address}/>
                     <div class='chat-message-content'>
                         <p>{message.message}</p>
                     </div>
 
                     <div class='chat-details'>
-                        <span class='chat-message-localization font-size-small'>{message.originAddress}</span>
+                        <span class='chat-message-localization font-size-small'>{message.address}</span>
                         <span class='chat-message-read-status font-size-small'>- {message.timestamp}</span>
 
                     </div>

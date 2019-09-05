@@ -1,7 +1,7 @@
 [
-{"mine": false, "timestamp":"1567680171", "message":"hafhskha jksahfjkhasukfhk hkasfhsahf haksjhf jahskjhfjksahfhfkj ajksfhjksahkjahsfh kjashjfkhaskfhkjahkjfshaf hjakhjskfhaks"},
-{"mine": false, "timestamp":"1567680271", "message":"hafhskha jksahfjkhasukfhk hkasfhsahf haksjhf jahskjhfjksahfhfkj ajksfhjksahkjahsfh kjashjfkhaskfhkjahkjfshaf hjakhjskfhaks"},
-{"mine": true, "timestamp":"1567680371", "message":"hafhskha jksahfjkhasukfhk hkasfhsahf haksjhf jahskjhfjksahfhfkj ajksfhjksahkjahsfh kjashjfkhaskfhkjahkjfshaf hjakhjskfhaks"},
-{"mine": true, "timestamp":"1567680471", "message":"hafhskha jksahfjkhasukfhk hkasfhsahf haksjhf jahskjhfjksahfhfkj ajksfhjksahkjahsfh kjashjfkhaskfhkjahkjfshaf hjakhjskfhaks"},
-{"mine": false, "timestamp":"1567680571", "message":"hafhskha jksahfjkhasukfhk hkasfhsahf haksjhf jahskjhfjksahfhfkj ajksfhjksahkjahsfh kjashjfkhaskfhkjahkjfshaf hjakhjskfhaks"}
+{"address":"0x90B3667b2c68A8BcD492f09c0235E975f823a22A","mine": false, "timestamp":"1567680171", "message":"hafhskha jksahfjkhasukfhk hkasfhsahf haksjhf jahskjhfjksahfhfkj ajksfhjksahkjahsfh kjashjfkhaskfhkjahkjfshaf hjakhjskfhaks"},
+{"address":"0x90B3667b2c68A8BcD492f09c0235E975f823a22A","mine": false, "timestamp":"1567680271", "message":"hafhskha jksahfjkhasukfhk hkasfhsahf haksjhf jahskjhfjksahfhfkj ajksfhjksahkjahsfh kjashjfkhaskfhkjahkjfshaf hjakhjskfhaks"},
+{"address":"0xb45824d69ee94Ffe1BF1B080a3Baf2E6Bd1884Aa", "mine": true, "timestamp":"1567680371", "message":"hafhskha jksahfjkhasukfhk hkasfhsahf haksjhf jahskjhfjksahfhfkj ajksfhjksahkjahsfh kjashjfkhaskfhkjahkjfshaf hjakhjskfhaks"},
+{"address":"0xb45824d69ee94Ffe1BF1B080a3Baf2E6Bd1884Aa", "mine": true, "timestamp":"1567680471", "message":"hafhskha jksahfjkhasukfhk hkasfhsahf haksjhf jahskjhfjksahfhfkj ajksfhjksahkjahsfh kjashjfkhaskfhkjahkjfshaf hjakhjskfhaks"},
+{"address":"0x90B3667b2c68A8BcD492f09c0235E975f823a22A","mine": false, "timestamp":"1567680571", "message":"hafhskha jksahfjkhasukfhk hkasfhsahf haksjhf jahskjhfjksahfhfkj ajksfhjksahkjahsfh kjashjfkhaskfhkjahkjfshaf hjakhjskfhaks"}
 ]
