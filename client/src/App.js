@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import SimpleStorageContract from "./contracts/SimpleStorage.json";
 import getWeb3 from "./utils/getWeb3";
 import ContactList from './components/ContactList'
+import MessageList from './components/MessageList'
+import MessageForm from './components/MessageForm'
 
 import "./App.css";
 
@@ -69,6 +71,8 @@ class App extends Component {
 
 
         <ContactList/>
+        <MessageList/>
+        <MessageForm/>
       </div>
     );
   }
