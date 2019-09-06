@@ -2,9 +2,8 @@
   "name": "dojo-dapp-chat",
   "version": "1.0.0",
   "description": " decentralized chat app on eth with web3 and truffle react ",
-  "main": "truffle-config.js",
+  "main": "",
   "directories": {
-    "test": "test"
   },
   "dependencies": {
     "ganache-cli": "^6.6.0",
@@ -12,7 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ""
   },
   "repository": {
     "type": "git",
