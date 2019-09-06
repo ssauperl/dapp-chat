@@ -1,0 +1,30 @@
+{
+  "name": "dojo-dapp-chat",
+  "version": "1.0.0",
+  "description": " decentralized chat app on eth with web3 and truffle react ",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "ganache-cli": "^6.6.0",
+    "truffle": "^5.0.35"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.netconomy.net:7999/~ssauperl/dojo-dapp-chat.git"
+  },
+  "keywords": [
+    "eth",
+    "truffle",
+    "dapp",
+    "chat",
+    "web3"
+  ],
+  "author": "Simon Šauperl",
+  "license": " GPL-3.0-or-later"
+}
