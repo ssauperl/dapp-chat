@@ -39,4 +39,14 @@ function sendAMessage(address toAddress, string memory content, string memory ti
         userMessages = chats[msg.sender].messages[toAddress];
         
     }
+    
+    function getTest(string memory toAddress)
+        public
+        view
+        returns (address test, string memory zzz)
+    {
+        test=msg.sender;
+        zzz=toAddress;
+        
+    }
 }
