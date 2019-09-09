@@ -1,4 +1,5 @@
 pragma solidity >=0.4.0 <0.6.0;
+pragma experimental ABIEncoderV2;
 
 
 contract Chat {
@@ -33,18 +34,9 @@ function sendAMessage(address toAddress, string memory content, string memory ti
     function getChatHistory(address toAddress)
         public
         view
-        returns (bytes32[] memory, bytes32[] memory, address[] memory)
+        returns (Message[] memory userMessages)
     {
-        Message[] memory userMessages = chats[msg.sender].messages[toAddress];
-        string[] memory timestamps = new string[](userMessages.length);
-        string[] memory messages = new string[](userMessages.length);
-        address[] memory addrs = new address[](userMessages.length);
-        for (uint i = 0; i < userMessages.length; i++) {
-            Message memory userMessage = userMessages[i];
-            timestamps[i] = userMessage.timestamp;
-            messages[i] = userMessage.text;
-            addrs[i] = userMessage.origin;
-        }
-        return (timestamps, messages, addrs);
+        userMessages = chats[msg.sender].messages[toAddress];
+        
     }
 }
