@@ -9,7 +9,7 @@ class MessageFetchButton extends Component {
     render(){
         return (
             <form onSubmit={this.handleSubmit}>
-                <button type>Load chat</button>
+                <button type="submit">Load chat</button>
             </form>
         )
     }

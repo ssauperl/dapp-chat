@@ -57,11 +57,11 @@ class App extends Component {
 
   getMessages = async () => {
     const { currentAccount, targetAccount, contract } = this.state;
-    let messages = await contract.methods.getChatHistory(this.state.targetAccount).send({ from: currentAccount });
+    let messages = await contract.methods.getChatHistory(this.state.targetAccount).call({ from: currentAccount });
     this.setState({messages: messages});
   }
 
-  sendAMessgage = async (text) => {
+  sendAMessage = async (text) => {
     const { currentAccount, targetAccount, contract } = this.state;
     await contract.methods.sendAMessage(this.state.targetAccount, text).send({ from: currentAccount });
   }
@@ -75,7 +75,7 @@ class App extends Component {
         <ContactList contacts={this.state.accounts}/>
         <MessageFetchButton getMessages={this.getMessages}/>
         <MessageList messages={this.state.messages} currentAccount={this.state.currentAccount}/>
-        <MessageForm sendAMessgage={this.sendAMessgage}/>
+        <MessageForm sendAMessage={this.sendAMessage}/>
       </div>
     );
   }
