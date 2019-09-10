@@ -6,7 +6,7 @@ class HashAvatar extends Component {
         const {classes, hash} = this.props;
         const avatar = jdenticon.toSvg(hash, 30);
         return (
-            <div class={classes} dangerouslySetInnerHTML={{__html:avatar}} />
+            <div className={classes} dangerouslySetInnerHTML={{__html:avatar}} />
         );
     }
 }

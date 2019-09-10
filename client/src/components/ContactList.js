@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import contacts from '../data/contacts.json'
+//import contacts from '../data/contacts.json'
 import HashAvatar from './HashAvatar'
 
 class ContactItem extends Component {
@@ -9,23 +9,23 @@ class ContactItem extends Component {
             <article>
                 <HashAvatar hash={address}/>
                 <div className="contact">
-                    {address}
-                    <strong>@{name}</strong>
+                    <strong>@{address}</strong>
                 </div>
             </article>
         );
     }
 }
 class ContactList extends Component {
+
     render() {
+        const contacts = this.props.contacts || [];
         return (
             <ul className="contactList">
                 {contacts.map(contact => (
                 <li>
                     <ContactItem
-                        key={contact.address}
-                        name={contact.name}
-                        address={contact.address}
+                        key={contact}
+                        address={contact}
                     />
                 </li>
                 ))}
