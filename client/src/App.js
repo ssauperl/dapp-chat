@@ -6,6 +6,7 @@ import ContactList from './components/ContactList'
 import MessageList from './components/MessageList'
 import MessageFetchButton from './components/MessageFetchButton'
 import MessageForm from './components/MessageForm'
+import 'bulma/css/bulma.css';
 
 import "./App.css";
 
@@ -87,7 +88,7 @@ class App extends Component {
           setCurrentAccount={this.setCurrentAccount}
           setTargetAccount={this.setTargetAccount}/>
         <MessageFetchButton getMessages={this.getMessages}/>
-        <MessageList messages={this.state.messages} currentAccount={this.state.currentAccount}/>
+        <MessageList messages={this.state.messages} currentAccount={this.state.currentAccount} web3={this.state.web3}/>
         <MessageForm sendAMessage={this.sendAMessage}/>
       </div>
     );
