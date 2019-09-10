@@ -4,49 +4,42 @@ pragma experimental ABIEncoderV2;
 
 contract Chat {
 
- struct  Message {
-     address origin;
-     string timestamp;
-     string text;
- }
- 
-struct UserChat {
-  address owner;
-  mapping (address => Message[]) messages ;
- }
- 
+    struct  Message {
+        address origin;
+        string text;
+        uint256 timestamp;
+    }
+    struct UserChat {
+        mapping (address => Message[]) messages ;
+    }
+    mapping (address => mapping (address => Message[]))  chats;
 
- 
-mapping (address => UserChat) public  chats;
+    mapping (address => string)  testz;
+    string myString;
 
-
-
-function sendAMessage(address toAddress, string memory content, string memory timestamp) public {
-    UserChat storage senderChat = chats[msg.sender];
-    Message memory userMessage = Message(msg.sender, content, timestamp);
-    senderChat.messages[toAddress].push(userMessage);
-    
-    UserChat storage recieverChat = chats[toAddress];
-    recieverChat.messages[toAddress].push(userMessage);
-
-}
+    function sendAMessage(address toAddress, string memory content) public {
+        uint256 timestamp = now;
+        chats[msg.sender][toAddress].push(Message(msg.sender, content, timestamp));
+        chats[toAddress][msg.sender].push(Message(msg.sender, content, timestamp));
+    }
 
     function getChatHistory(address toAddress)
         public
         view
         returns (Message[] memory userMessages)
     {
-        userMessages = chats[msg.sender].messages[toAddress];
-        
+        userMessages = chats[msg.sender][toAddress];
     }
-    
-    function getTest(string memory toAddress)
+
+    function setTest(string memory test) public returns (string memory){
+       myString = test;
+       return myString;
+    }
+    function getTest()
         public
         view
-        returns (address test, string memory zzz)
+        returns (string memory)
     {
-        test=msg.sender;
-        zzz=toAddress;
-        
+        return myString;
     }
 }

@@ -1,13 +1,14 @@
-pragma solidity ^0.5.0;
+pragma solidity >=0.4.0 <0.6.0;
+pragma experimental ABIEncoderV2;
 
 contract SimpleStorage {
-  uint storedData;
+  string storedData;
 
-  function set(uint x) public {
+  function set(string memory x) public {
     storedData = x;
   }
 
-  function get() public view returns (uint) {
+  function get() public view returns (string memory) {
     return storedData;
   }
 }
