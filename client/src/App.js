@@ -27,7 +27,7 @@ class App extends Component {
         Chat.abi,
         deployedNetwork && deployedNetwork.address,
       );
-      const currentAccount = accounts[0];
+      const currentAccount = accounts[3];
       const targetAccount = accounts[1];
 
       // Set web3, accounts, and contract to the state, and then proceed with an
@@ -57,13 +57,21 @@ class App extends Component {
 
   getMessages = async () => {
     const { currentAccount, targetAccount, contract } = this.state;
-    let messages = await contract.methods.getChatHistory(this.state.targetAccount).call({ from: currentAccount });
+    let messages = await contract.methods.getChatHistory(targetAccount).call({ from: currentAccount });
     this.setState({messages: messages});
   }
 
   sendAMessage = async (text) => {
-    const { currentAccount, targetAccount, contract } = this.state;
-    await contract.methods.sendAMessage(this.state.targetAccount, text).send({ from: currentAccount });
+    const { currentAccount, targetAccount, contract, messages } = this.state;
+    await contract.methods.sendAMessage(targetAccount, text).send({ from: currentAccount, gas: '300000' });
+    
+    this.setState({messages: messages.concat({origin: currentAccount, text: text, timestamp: Date.now() / 1000 | 0})});
+  }
+  setCurrentAccount = (address)=>{
+    this.setState({currentAccount:address, messages:[]})
+  }
+  setTargetAccount = (address)=>{
+    this.setState({targetAccount:address, messages:[]})
   }
 
   render() {
@@ -72,7 +80,12 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <ContactList contacts={this.state.accounts}/>
+        <div>{this.state.currentAccount} ----> {this.state.targetAccount}</div>
+        <ContactList contacts={this.state.accounts}
+          currentAccount={this.state.currentAccount} 
+          targetAccount={this.state.targetAccount}
+          setCurrentAccount={this.setCurrentAccount}
+          setTargetAccount={this.setTargetAccount}/>
         <MessageFetchButton getMessages={this.getMessages}/>
         <MessageList messages={this.state.messages} currentAccount={this.state.currentAccount}/>
         <MessageForm sendAMessage={this.sendAMessage}/>

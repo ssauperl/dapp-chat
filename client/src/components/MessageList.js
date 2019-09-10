@@ -8,15 +8,15 @@ class MessageItem extends Component {
         const {message, mine} = this.props;
         return (
             <div className={mine ? 'chat-message chat-message-sender' : 'chat-message chat-message-recipient'}>
-                <div class='chat-message-wrapper'>
+                <div className='chat-message-wrapper'>
                     <HashAvatar classes="chat-image chat-image-default" hash={message.origin}/>
-                    <div class='chat-message-content'>
+                    <div className='chat-message-content'>
                         <p>{message.text}</p>
                     </div>
 
-                    <div class='chat-details'>
-                        <span class='chat-message-localization font-size-small'>{message.origin}</span>
-                        <span class='chat-message-read-status font-size-small'>- {message.timestamp}</span>
+                    <div className='chat-details'>
+                        <span className='chat-message-localization font-size-small'>{message.origin}</span>
+                        <span className='chat-message-read-status font-size-small'>- {message.timestamp}</span>
 
                     </div>
                 </div>
@@ -29,7 +29,7 @@ class MessageList extends Component {
         const messages = this.props.messages || [];
         return (
             <div className="messageList chat-wrapper">
-                <div class='chat-message padding'>
+                <div className='chat-message padding'>
                     {messages.map(message => (
                         <MessageItem
                             key={message.timestamp}
